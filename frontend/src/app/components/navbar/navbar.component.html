@@ -1,7 +1,8 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
   <a class="navbar-brand">Navbar</a>
   <div>
-  		<a class="navbar-brand" routerLink="login">LogIn</a>
+  		<a class="navbar-brand" routerLink="login" *ngIf="!loggeddInn">Log In</a>
+  		<a class="navbar-brand" routerLink="login" *ngIf="loggeddInn">Log Out</a>
   		<a class="navbar-brand" routerLink="profile">Profile</a>
   	
   </div>
