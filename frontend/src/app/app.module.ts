@@ -12,6 +12,11 @@ import { ResetResponseComponent } from './components/password/reset-response/res
 import { AppRoutingModule } from './/app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+// import { ReqServiceService }  from './Services/Req-Service.Service';
+// import { AfterLoginService } from './Services/after-login.service';
+// import { AuthService } from './Services/auth.service';
+// import { BeforeLoginService } from './Services/before-login.service';
+// import { TokenService } from './Services/token.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    // TokenService,
+    // ReqServiceService,
+    // AfterLoginService,
+    // AuthService,
+    // BeforeLoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

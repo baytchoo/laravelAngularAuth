@@ -7,7 +7,7 @@ export class TokenService {
 
   private iss = {
     login : 'http://127.0.0.1:8000/api/login',
-    signup : 'http://127.0.0.1:8000/api/signup',
+    signup : 'http://127.0.0.1:8000/api/signup'
   }
   constructor() { }
 
@@ -39,7 +39,7 @@ export class TokenService {
   }
 
   getPayload(token) {
-  	const payload = token.split('.')[1]));
+  	const payload = token.split('.')[1];
   	return this.decodePayload(payload);
   }
 
