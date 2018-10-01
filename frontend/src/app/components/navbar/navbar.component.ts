@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
   logout(event : MouseEvent) {
   	event.preventDefault();
      this.tokenService.remove();
-  	this.authService.changeAuthStatus(false);
+  	  this.authService.changeAuthStatus(false);
      this.router.navigateByUrl('/login');
   }
 

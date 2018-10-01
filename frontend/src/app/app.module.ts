@@ -12,6 +12,8 @@ import { ResetResponseComponent } from './components/password/reset-response/res
 import { AppRoutingModule } from './/app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { TestComponent } from './tests/test.component';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 // import { ReqServiceService }  from './Services/Req-Service.Service';
 // import { AfterLoginService } from './Services/after-login.service';
 // import { AuthService } from './Services/auth.service';
@@ -26,16 +28,20 @@ import { HttpClientModule } from '@angular/common/http';
     SignupComponent,
     ProfileComponent,
     ResetRequestComponent,
-    ResetResponseComponent
+    ResetResponseComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SnotifyModule
   ],
   providers: [
+    { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
+    SnotifyService
     // TokenService,
     // ReqServiceService,
     // AfterLoginService,

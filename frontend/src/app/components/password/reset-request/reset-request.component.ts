@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReqServiceService } from '../../../Services/Req-Service.Service';
+import { SnotifyService } from 'ng-snotify';
 
 @Component({
   selector: 'app-reset-request',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResetRequestComponent implements OnInit {
 
-  constructor() { }
+	public form = {
+		email: null
+	};
+	constructor(private reqService : ReqServiceService,
+				private notify     : SnotifyService
+		) { }
 
-  ngOnInit() {
+	ngOnInit() {
+	}
+
+	onSubmit() {
+		this.reqService.sendPasswordResetLink(this.form).subscribe(
+  			data => this.handleResponse(data),
+  			error =>  this.notify.error(error.error.error)
+  		);
+	}
+
+	handleResponse(data) {
+		console.log(data);
+     	this.form.email = null;
   }
 
 }

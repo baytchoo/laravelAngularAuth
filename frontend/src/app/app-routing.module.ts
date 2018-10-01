@@ -7,6 +7,7 @@ import {ResetResponseComponent} from './components/password/reset-response/reset
 import {ProfileComponent} from './components/profile/profile.component';
 import { BeforeLoginService } from './Services/before-login.service';
 import { AfterLoginService } from './Services/after-login.service';
+import { TestComponent } from './tests/test.component';
 
 
 
@@ -30,13 +31,17 @@ const appRoutes: Routes = [
   { 
     path: 'request-password-reset', 
     component: ResetRequestComponent,
-    canActivate: [AfterLoginService]
+    canActivate: [BeforeLoginService]
   },
   { 
     path: 'response-password-reset', 
     component: ResetResponseComponent,
-    canActivate: [AfterLoginService]
+    canActivate: [BeforeLoginService]
   },
+  // { 
+  //   path: 'test', 
+  //   component: TestComponent
+  // },
   ]
 
 @NgModule({

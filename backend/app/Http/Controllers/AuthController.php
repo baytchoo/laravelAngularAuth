@@ -70,6 +70,10 @@ class AuthController extends Controller
         return response()->json(['message' => 'Successfully logged out']);
     }
 
+    // public function test() {
+    //     return response()->json(['authData' => auth()]);
+    // }
+
     /**
      * Refresh a token.
      *
