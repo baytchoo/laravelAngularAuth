@@ -20,6 +20,7 @@ export class ResetRequestComponent implements OnInit {
 	}
 
 	onSubmit() {
+		this.notify.info('Please wait...' , { timeout:5000});
 		this.reqService.sendPasswordResetLink(this.form).subscribe(
   			data => this.handleResponse(data),
   			error =>  this.notify.error(error.error.error)
@@ -27,8 +28,8 @@ export class ResetRequestComponent implements OnInit {
 	}
 
 	handleResponse(data) {
-		console.log(data);
+		this.notify.success(data.data, {timeout:5000});
      	this.form.email = null;
-  }
+  	}
 
 }

@@ -21,4 +21,8 @@ export class ReqServiceService {
   sendPasswordResetLink(data) {
   	return this.http.post(`${this.baseUrl}sendpasswordresetlink`, data);
   }
+
+  changePassword(data) {
+    return this.http.post(`${this.baseUrl}resetpassword`, data);
+  }
 }
